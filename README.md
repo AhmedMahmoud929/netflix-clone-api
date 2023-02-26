@@ -11,13 +11,13 @@ open source API for movies app build by Node JS / Express JS / Mongo DB  with an
 Clone the project
 
 ```bash
-  git clone https://github.com/AhmedMahmoud929/netflix-clone-api
+  git clone https://github.com/achraflafkiri/restful-movie-app.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd netflix-clone-api
+  cd restful-movie-app
 ```
 
 Install dependencies
@@ -42,32 +42,32 @@ Start the server
 
 AUTH
 ```bash
-/api/auth/register   [POST]
-/api/auth/login      [POST]
+/api/v1/auth/register   [POST]
+/api/v1/auth/login      [POST]
 ```
 
 USERS
 ```bash
-/api/users        [GET]
-/api/users/:id    [GET]
-/api/users/:id    [PATCH]
-/api/users/:id    [DELETE]
+/api/v1/users        [GET]
+/api/v1/users/:id    [GET]
+/api/v1/users/:id    [PATCH]
+/api/v1/users/:id    [DELETE]
 ```
 
 MOVIES
 ```bash
-/api/movies        [GET]
-/api/movies        [POST]
-/api/movies/:id    [GET]
-/api/movies/:id    [PATCH]
-/api/movies/:id    [DELETE]
+/api/v1/movies        [GET]
+/api/v1/movies        [POST]
+/api/v1/movies/:id    [GET]
+/api/v1/movies/:id    [PATCH]
+/api/v1/movies/:id    [DELETE]
 ```
 
 LISTS
 ```bash
-/api/lists        [GET]
-/api/lists        [POST]
-/api/lists/:id    [DELETE]
+/api/v1/lists        [GET]
+/api/v1/lists        [POST]
+/api/v1/lists/:id    [DELETE]
 ```
 
 
@@ -78,20 +78,20 @@ LISTS
 
 USERS
 ```bash
-/api/users/?limit=10  [GET]
+/api/v1/users/?limit=10  [GET]
 ```
 
 MOVIES
 ```bash
-/api/movies/?genre=romantic  [GET]
-/api/movies/?type=serie      [GET]
+/api/v1/movies/?genre=romantic  [GET]
+/api/v1/movies/?type=serie      [GET]
 
 ```
 
 LISTS
 ```bash
-/api/lists/?genre=romantic  [GET]
-/api/lists/?type=serie      [GET]
+/api/v1/lists/?genre=romantic  [GET]
+/api/v1/lists/?type=serie      [GET]
 ``` 
 
 
