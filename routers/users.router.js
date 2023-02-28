@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { verifyToken, checkAdmin } = require("../middlewares/checkLogin");
+const { checkAuth, checkAdmin } = require("../middlewares/checkLogin");
 const {
   getAllusers,
   getUserById,
@@ -9,9 +9,9 @@ const {
 
 router
   .route("/:id")
-  .get(getUserById)
-  .patch(verifyToken, updateUser)
-  .delete(verifyToken, deleteUser);
+  .get(checkAuth, getUserById)
+  .patch(checkAuth, updateUser)
+  .delete(checkAuth, deleteUser);
 router.route("/").get(checkAdmin, getAllusers);
 
 module.exports = router;

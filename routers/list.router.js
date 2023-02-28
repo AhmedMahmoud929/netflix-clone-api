@@ -1,11 +1,12 @@
 const router = require("express").Router();
-const {verifyToken} = require("../middlewares/checkLogin");
-const { createList, deleteMovie, getAllMovies } = require("../controllers/listController");
+const { checkLogin } = require("../middlewares/checkLogin");
+const {
+  createList,
+  deleteMovie,
+  getAllMovies,
+} = require("../controllers/listController");
 
-// Create a new list
-router.post("/", verifyToken, createList);
-
-// Get all movies
-router.get("/", verifyToken, getAllMovies).delete("/:id", verifyToken, deleteMovie);
+router.route("/").get(checkLogin, getAllMovies).post(checkLogin, createList);
+router.route("/:id").delete(checkLogin, deleteMovie);
 
 module.exports = router;

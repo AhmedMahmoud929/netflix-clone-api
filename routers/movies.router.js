@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { verifyToken } = require("../middlewares/checkLogin");
+const { checkAuth, checkAdmin } = require("../middlewares/checkLogin");
 const {
   createMovie,
   deleteMovie,
@@ -10,9 +10,9 @@ const {
 
 router
   .route("/:id")
-  .get(getMovieById)
-  .put(verifyToken, updateMovie)
-  .delete(verifyToken, deleteMovie);
-router.route("/").get(getAllMovies).post(verifyToken, createMovie);
+  .get(checkAuth, getMovieById)
+  .patch(checkAuth, updateMovie)
+  .delete(checkAuth, deleteMovie);
+router.route("/").get(checkAdmin, getAllMovies).post(checkAuth, createMovie);
 
 module.exports = router;
